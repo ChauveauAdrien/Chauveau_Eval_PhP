@@ -102,7 +102,15 @@ create_link();
  *@param integer $link_id
  * @return bool
  */
-function delete_link($link_id)
-{
-    // TODO implement function
+function delete_link($link_id){
+
+    $db = db_connect();
+    $sql = "DELETE FROM `links`
+    WHERE `link_id` = $link_id";
+    $db->exec($sql);
+    header('Location: ./index.php ');
+    
+}
+if (isset($_GET['id'])) {
+    delete_link($_GET['id']);
 }

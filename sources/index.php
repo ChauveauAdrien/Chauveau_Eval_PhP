@@ -46,7 +46,7 @@ $links = get_all_link();
                 <a href="<?= $link['url']?>"> <?=$link['title']?></a>
                 <span>
                   <a href="./edit-link.php"><i class="fa-regular fa-pen-to-square me-1 text-warning"></i></a>
-                  <i class="fa-solid fa-trash ms-1 text-danger"></i>
+                  <a href="./functions.php?id=<?= $link['link_id']?>"><i class="fa-solid fa-trash ms-1 text-danger"></i></a>
                 </span>
               </li>      
              

@@ -4,7 +4,7 @@ require_once('./inc/header.php');
       <div class="container h-100">
         <div class="row justify-content-center h-50">
           <div class="col-md-6 shadow p-3 pt-5">
-            <h2 class="mb-3">Éditer le lien # 1</h2>
+            <h2 class="mb-3">Éditer le lien #<?= $_GET['link_id']?></h2>
             <div class="mb-3">
               <form action="" method="post">
                 <div class="mb-3">
