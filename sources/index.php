@@ -1,7 +1,6 @@
 <?php
 require_once('./inc/header.php');
 $links = get_all_link();
-
 ?>
       <div class="container">
         <div class="row justify-content-center">
@@ -45,7 +44,7 @@ $links = get_all_link();
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a href="<?= $link['url']?>"> <?=$link['title']?></a>
                 <span>
-                  <a href="./edit-link.php"><i class="fa-regular fa-pen-to-square me-1 text-warning"></i></a>
+                  <a href="./edit-link.php?link_id=<?= $link['link_id']?>"><i class="fa-regular fa-pen-to-square me-1 text-warning"></i></a>
                   <a href="./functions.php?id=<?= $link['link_id']?>"><i class="fa-solid fa-trash ms-1 text-danger"></i></a>
                 </span>
               </li>      

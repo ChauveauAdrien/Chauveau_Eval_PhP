@@ -68,11 +68,20 @@ function get_link_by_id($link_id)
  * @param array $data: ['link_id' => 1, 'title' => 'MDN', 'url' => 'https://developer.mozilla.org/fr/']
  * @return bool
  */
-function update_link($data)
+function update_link()
 {
-    // TODO implement function
+    if ((!empty($_POST['new_title']) and isset($_POST['new_title'])) and (!empty($_POST['new_url']) and isset($_POST['new_url']))) {
+        $db = db_connect();
+        $sql = "UPDATE links
+        SET title = '$_POST[new_title]',
+            url = '$_POST[new_url]'
+        WHERE id = $_GET[link_id]";
+        $db->exec($sql);
+        header('Location: ./index.php ');
+    }
+    
 }
-
+update_link();
 
 /**
  * Fonction qui permet de d'enregistrer un nouveau lien dans la table des liens
@@ -108,6 +117,7 @@ function delete_link($link_id){
     $sql = "DELETE FROM `links`
     WHERE `link_id` = $link_id";
     $db->exec($sql);
+    $_GET['id']  = "undefined";
     header('Location: ./index.php ');
     
 }

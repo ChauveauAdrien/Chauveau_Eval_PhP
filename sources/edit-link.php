@@ -6,14 +6,14 @@ require_once('./inc/header.php');
           <div class="col-md-6 shadow p-3 pt-5">
             <h2 class="mb-3">Éditer le lien #<?= $_GET['link_id']?></h2>
             <div class="mb-3">
-              <form action="" method="post">
+              <form action="./functions.php" method="post">
                 <div class="mb-3">
                   <div class="form-floating">
                     <input
                       type="text"
                       class="form-control"
-                      id="title"
-                      name="title"
+                      id="new_title"
+                      name="new_title"
                       placeholder="Stack overflow"
                     />
                     <label for="title">Titre</label>
@@ -24,8 +24,8 @@ require_once('./inc/header.php');
                     <input
                       type="url"
                       class="form-control"
-                      id="url"
-                      name="url"
+                      id="new_url"
+                      name="new_url"
                       placeholder="https://stackoverflow.com"
                     />
                     <label for="url">Lien</label>
