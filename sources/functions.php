@@ -38,9 +38,19 @@ function db_connect(): PDO
  */
 function get_all_link()
 {
-    // TODO implement function
-}
 
+    $db = db_connect();
+
+    $sql = <<<EOD
+    SELECT
+        *
+    FROM
+        `links`
+    EOD;
+    $linksStmt = $db->query($sql);
+    $links = $linksStmt->fetchAll(PDO::FETCH_ASSOC);
+    return $links;
+}
 
 /**
  * Fonction qui permet de récupérer un enregistrement à partir de son identifiant dans la table des liens

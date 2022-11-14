@@ -1,5 +1,6 @@
 <?php
 require_once('./inc/header.php');
+$links = get_all_link();
 ?>
       <div class="container">
         <div class="row justify-content-center">
@@ -38,16 +39,18 @@ require_once('./inc/header.php');
               </form>
             </div>
             <ul class="list-group">
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center"
-              >
-                <a href="https://developer.mozilla.org/fr"> MDN Web docs</a>
+              <?php foreach($links as $link) : ?>
+
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="<?= $link['url']?>"> <?=$link['title']?></a>
                 <span>
                   <i class="fa-regular fa-pen-to-square me-1 text-warning"></i>
                   <i class="fa-solid fa-trash ms-1 text-danger"></i>
                 </span>
-              </li>
-              <li
+              </li>      
+             
+              <?php endforeach ?>
+              <!-- <li
                 class="list-group-item d-flex justify-content-between align-items-center"
               >
                 <a href="https://css-tricks.com">CSS tricks</a>
@@ -84,7 +87,7 @@ require_once('./inc/header.php');
                   <i class="fa-regular fa-pen-to-square me-1 text-warning"></i>
                   <i class="fa-solid fa-trash ms-1 text-danger"></i>
                 </span>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
