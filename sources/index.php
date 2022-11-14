@@ -1,12 +1,13 @@
 <?php
 require_once('./inc/header.php');
 $links = get_all_link();
+
 ?>
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6">
             <div class="mb-3">
-              <form action="" method="post">
+              <form action="./functions.php" method="post">
                 <div class="row g-2">
                   <div class="col-md">
                     <div class="form-floating">
@@ -44,50 +45,12 @@ $links = get_all_link();
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a href="<?= $link['url']?>"> <?=$link['title']?></a>
                 <span>
-                  <i class="fa-regular fa-pen-to-square me-1 text-warning"></i>
+                  <a href="./edit-link.php"><i class="fa-regular fa-pen-to-square me-1 text-warning"></i></a>
                   <i class="fa-solid fa-trash ms-1 text-danger"></i>
                 </span>
               </li>      
              
               <?php endforeach ?>
-              <!-- <li
-                class="list-group-item d-flex justify-content-between align-items-center"
-              >
-                <a href="https://css-tricks.com">CSS tricks</a>
-                <span>
-                  <i class="fa-regular fa-pen-to-square me-1 text-warning"></i>
-                  <i class="fa-solid fa-trash ms-1 text-danger"></i>
-                </span>
-              </li>
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center"
-              >
-                <a href="https://www.awwwards.com">AWWARDS</a>
-                <span>
-                  <i class="fa-regular fa-pen-to-square me-1 text-warning"></i>
-                  <i class="fa-solid fa-trash ms-1 text-danger"></i>
-                </span>
-              </li>
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center"
-              >
-                <a href="https://eilgin.github.io/php-the-right-way"
-                  >PHP the right way</a
-                >
-                <span>
-                  <i class="fa-regular fa-pen-to-square me-1 text-warning"></i>
-                  <i class="fa-solid fa-trash ms-1 text-danger"></i>
-                </span>
-              </li>
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center"
-              >
-                <a href="https://beta.reactjs.org">React.JS New doc</a>
-                <span>
-                  <i class="fa-regular fa-pen-to-square me-1 text-warning"></i>
-                  <i class="fa-solid fa-trash ms-1 text-danger"></i>
-                </span>
-              </li> -->
             </ul>
           </div>
         </div>

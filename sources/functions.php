@@ -79,10 +79,23 @@ function update_link($data)
  * @param array $data: ['title' => 'MDN', 'url' => 'https://developer.mozilla.org/fr/']
  * @return bool
  */
-function create_link($data)
-{
-    // TODO implement function
+function create_link(){
+
+    function verify_link(){
+        return((!empty($_POST['title']) and isset($_POST['title'])) and (!empty($_POST['url']) and isset($_POST['url'])));
+    }
+
+    if(verify_link()){
+        $db = db_connect();
+        $sql = "INSERT INTO links (title, url)
+        VALUES ('$_POST[title]', '$_POST[url]')";
+        $db->exec($sql);
+        header('Location: ./index.php ');
+        
+    }
+
 }
+create_link();
 
 /**
  * Fonction qui permet de supprimer l'enregistrement dont l'identifiant est $linl_id dans la table des liens
